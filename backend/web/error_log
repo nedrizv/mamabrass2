@@ -1,0 +1,4 @@
+[08-Sep-2016 05:31:04 UTC] PHP Fatal error:  Class 'mPDF' not found in /home/ankitadv/public_html/aa_app/backend/controllers/ReleaseOrderController.php on line 205
+[08-Sep-2016 05:31:09 UTC] PHP Fatal error:  Class 'mPDF' not found in /home/ankitadv/public_html/aa_app/backend/controllers/ReleaseOrderController.php on line 205
+[08-Sep-2016 17:49:08 UTC] PHP Fatal error:  Class 'mPDF' not found in /home/ankitadv/public_html/aa_app/backend/controllers/ReleaseOrderController.php on line 205
+[14-Sep-2016 04:17:17 UTC] PHP Fatal error:  Call to a member function formName() on null in /home/ankitadv/public_html/aa_app/vendor/yiisoft/yii2/helpers/BaseHtml.php on line 2074
