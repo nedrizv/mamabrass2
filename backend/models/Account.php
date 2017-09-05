@@ -35,6 +35,15 @@ class Account extends \yii\db\ActiveRecord
 		    if($insert)
 			   $this->created_on = date('Y-m-d H:i:s');
 			   $this->user_id = Yii::$app->user->id;
+               
+               // update balance
+               // print_r($this->getDirtyAttributes()['customer_id']); die;
+               // Get previous balance for customer
+               echo "ASD-".$this->getPreviousBalance($this->getDirtyAttributes()['customer_id']);
+               if ($this->description_type=='sale' || $this->description_type=='return') {
+                     // $this->balance = ;
+
+               }
 		    return true;
 	     } else {
 		   return false;
@@ -86,5 +95,14 @@ class Account extends \yii\db\ActiveRecord
         }
         else 
         return 0;
+    }
+
+    public function getPreviousBalance($customerId)
+    {
+        $connection=Yii::app()->db;
+        $command = $connection->createCommand("SELECT balance FROM ezl_account e where customer_id=$customerId order by created_on desc");
+        $amount = $command->queryScalar();
+        return "R$ ".Yii::app()->format->formatNumber($amount);
+      
     }
 }

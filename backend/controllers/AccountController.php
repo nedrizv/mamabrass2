@@ -54,7 +54,7 @@ class AccountController extends Controller
     }
 
     public function actionStatement()
-    {   error_reporting(1);
+    {   error_reporting(1); 
         $model = new Account();
         if ($model->load(Yii::$app->request->post())) {
             $customerId = $model->customer_id;
@@ -115,7 +115,7 @@ class AccountController extends Controller
                             $saleAmt=0;
                             $paymentAmt=0;
                             $returnAmt=0;
-                            if(strtolower($account->description_type)=="pay" || strtolower($account->description_type)=="pay - discount")
+                            if(strtolower($account->description_type)=="pay" || strtolower($account->description_type)=="discount")
                             {
                                 $paymentAmt=$account->amount;
                                 $totalAmount=$totalAmount-$paymentAmt;
@@ -179,7 +179,7 @@ class AccountController extends Controller
     public function actionCreate()
     {
         $model = new Account();
-
+        // print_r(Yii::$app->request->post()); die;
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', 'Account has been successfully Added!');
             return $this->redirect(['/account']);

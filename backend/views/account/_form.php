@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="parsley-row">
                                 <?php
                                 echo $form->field($model, 'description_type')->widget(Select2::classname(), [
-                                    'data' => ["Sale"=>"Sale", "Pay"=>"Pay", "Return"=>"Return", "Pay - Discount"=>"Pay - Discount"],
+                                    'data' => ["Sale"=>"Sale", "Pay"=>"Pay", "Return"=>"Return", "Discount"=>" Discount"],
                                     'options' => ['placeholder' => 'Select Customer ...'],
                                     'pluginOptions' => [
                                         'allowClear' => true

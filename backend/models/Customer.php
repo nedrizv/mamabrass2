@@ -88,4 +88,17 @@ class Customer extends \yii\db\ActiveRecord
             return "";
         }
     }
+
+    public function getTotalBalance($ids) 
+    {
+        if($ids){
+        $ids = implode(",",$ids);
+        $connection=Yii::app()->db;
+        $command=$connection->createCommand("SELECT SUM(amount) FROM `ezl_account` where account_id in ($ids)");
+        $amount = $command->queryScalar();
+        return "R$ ".Yii::app()->format->formatNumber($amount);
+        }
+        else 
+        return 0;
+    }
 }

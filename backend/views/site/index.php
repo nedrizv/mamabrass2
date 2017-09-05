@@ -19,6 +19,7 @@ use backend\models\Customer;
                                         <th class="uk-text-nowrap">Customer ID</th>
                                         <th class="uk-text-nowrap">Mobile No</th>
                                         <th class="uk-text-nowrap uk-text-right">Contact Person</th>
+                                        <th class="uk-text-nowrap uk-text-right">Balance</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -30,6 +31,7 @@ use backend\models\Customer;
                                         <td class="uk-width-3-10 uk-text-nowrap"><?php echo $dbBooking->company_name;?></td>
                                         <td class="uk-width-2-10 uk-text-nowrap"><?php echo $dbBooking->mob_no;?></td>
                                         <td class="uk-width-2-10 uk-text-right uk-text-muted uk-text-small"><?php echo $dbBooking->contact_person;?></td>
+                                        <td class="uk-width-2-10 uk-text-nowrap"><?php echo $dbBooking->balance;?></td>
                                     </tr>
                                     <?php
                                     }

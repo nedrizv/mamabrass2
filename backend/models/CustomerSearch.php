@@ -46,7 +46,7 @@ class CustomerSearch extends Customer
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
+            'query' => $query
         ]);
 
         $this->load($params);
@@ -70,6 +70,8 @@ class CustomerSearch extends Customer
             ->andFilterWhere(['like', 'mob_no', $this->mob_no])
             ->andFilterWhere(['like', 'contact_person', $this->contact_person]);
 
+
+        print_r($dataProvider);
         return $dataProvider;
     }
 }

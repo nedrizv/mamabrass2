@@ -46,14 +46,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     'description_type',
                     'amount',
                     'account_date:date',
-                    /*[
-                        'attribute' => 'amount', 
-                        'label' => 'Amount',
-                        'value' => function ($model, $key, $index, $widget) {
-                                return Yii::$app->formatter->asCurrency($model->amount, 'INR');
-                                },
-                        'footer'=>"<strong>".$model->getTotals($model->search()->getKeys())." </strong>",
-                    ],*/
+                    'balance',
+                    // [
+                    //     'attribute' => 'balance', 
+                    //     'label' => 'Amount',
+                    //     'value' => function ($model, $key, $index, $widget) {
+                    //             return Yii::$app->formatter->asCurrency($searchModel->amount, 'INR');
+                    //             },
+                    //     'footer'=>"<strong>".$searchModel->getTotals($searchModel->search()->getKeys())." </strong>",
+                    // ],
                     ['class' => 'yii\grid\ActionColumn',
                             'header'=>'Action', 
                             'headerOptions' => ['width' => '150'],
